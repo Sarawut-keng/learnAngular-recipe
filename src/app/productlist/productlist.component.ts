@@ -7,16 +7,14 @@ import { ProductitemComponent } from '../productitem/productitem.component';
   templateUrl: './productlist.component.html',
   styleUrls: ['./productlist.component.css']
 })
-export class ProductlistComponent implements OnInit{
+export class ProductlistComponent implements OnInit {
+
   @ViewChildren(ProductitemComponent)
   productitems!: QueryList<ProductitemComponent>
 
-  products: Product[];
+  products!: Product[];
 
-  constructor() {
-    this.products = [];
-    
-  }
+  constructor() {}
 
   ngOnInit() {}
   

@@ -1,17 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductlistComponent } from './productlist/productlist.component';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  @ViewChild('productlist')
-  productlist!: ProductlistComponent;
+  @ViewChild('productlist', {static: true}) productlist!: ProductlistComponent;
 
   ngOnInit(): void {
-    this.productlist.products = [];
+
     this.productlist.products = [
       {
         name: 'mango',
