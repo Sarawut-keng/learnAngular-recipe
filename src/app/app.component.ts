@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { BackendService } from './services/backend.service';
 
 
 @Component({
@@ -8,27 +9,15 @@ import { ProductlistComponent } from './productlist/productlist.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  @ViewChild('productlist', {static: true}) productlist!: ProductlistComponent;
+
+  constructor(private backendService: BackendService) {} 
+
+  @ViewChild('productlist', {static: true}) 
+  productlist!: ProductlistComponent;
 
   ngOnInit(): void {
-
-    this.productlist.products = [
-      {
-        name: 'mango',
-        price: 299
-      },
-      {
-        name: 'coconut',
-        price: 399
-      },
-      {
-        name: 'Watermelon',
-        price: 300
-      }
-    ];
+    this.productlist.products = this.backendService.getProducts();
   }
 
-  constructor() {
-    
-  }
+
 }
