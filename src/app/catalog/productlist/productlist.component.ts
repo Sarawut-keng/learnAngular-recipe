@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../../product';
 import { ProductitemComponent } from '../productitem/productitem.component';
 
 @Component({

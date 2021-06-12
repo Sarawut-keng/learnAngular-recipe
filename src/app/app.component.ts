@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductlistComponent } from './productlist/productlist.component';
+import { ProductlistComponent } from './catalog/productlist/productlist.component';
 import { BackendService } from './services/backend.service';
 
 
