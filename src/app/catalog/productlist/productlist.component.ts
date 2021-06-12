@@ -1,6 +1,7 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Product } from '../../product';
 import { ProductitemComponent } from '../productitem/productitem.component';
+import { BackendService } from '../../services/backend.service';
 
 @Component({
   selector: 'app-productlist',
@@ -14,9 +15,13 @@ export class ProductlistComponent implements OnInit {
 
   products!: Product[];
 
-  constructor() {}
+  constructor(private backendService: BackendService) {
+    this.products = [];
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.products = this.backendService.getProducts()
+  }
   
   selectedProduct(productComponent: ProductitemComponent) {
     alert(`You choose ${productComponent.product.name}`);

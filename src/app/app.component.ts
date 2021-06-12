@@ -10,13 +10,13 @@ import { BackendService } from './services/backend.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private backendService: BackendService) {} 
+  // constructor(private backendService: BackendService) {} 
 
-  @ViewChild('productlist', {static: true}) 
-  productlist!: ProductlistComponent;
+  // @ViewChild('productlist', {static: true}) 
+  // productlist!: ProductlistComponent;
 
   ngOnInit(): void {
-    this.productlist.products = this.backendService.getProducts();
+    // this.productlist.products = this.backendService.getProducts();
   }
 
 
